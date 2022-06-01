@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  
+  <link type="text/css" rel="stylesheet" href="style.css"/>
+
+  
+
+  <title>Prueba Diagnostico - Fund. Vladimir Nazor</title>
+
+</head>
+
+<body>
+
+  <div id="main-container">
+    <header>Prueba Diagnostico</header>
+
+    <!-- EJERCICIO 1 -->
+    <div class="ejercicio">
+      <h2> SOLO PARES </h2>
+      <p class="descripcion">En este problema deberán mostrar elementos dependiendo de una condición.</p>
+      <div class="parte">
+        <h3> Parte 1  </h3>
+        <p>Deberán crear un programa, el cual deberá recibir un parámetro n ingresadopor el usuario, y mostrar
+los primeros 'n' pares.</p>
+
+        <label for="input1"> Ingrese un Numero: </label>
+        <input type="number" name="input1" id="input1"/>
+        <br><br>
+        <button type="button" class="btn btn-primary btn-sm" id="accion1">Resultado</button>
+        <button type="button"  class="btn btn-secondary btn-sm" id="limpiar1">Limpiar</button>
+        <button type ="button" class="btn btn-primary btn-sm" id="btn-solucion1">Ver Solucion</button>
+        <p id="resultado1"> </p>
+
+        <!-- SOLUCION-->
+        <div class="soluciones" id="solucion1">
+          <h3>SOLUCION</h3>
+            <p>
+              <pre> const pares = (n) => { 
+                let resultado = [] 
+                for (let i = 0; resultado.length <= n - 1 ; i += 2){  
+                  resultado.push(i)
+                }
+                return resultado
+              }</pre>
+              
+              
+              Donde en el almacen 'resultado' a traves de una iteracion y el metodo .push() se alacenan los numeros
+              partiendo desde 0 y sumando 2 en cada iteracion una cantidad 'n' de veces.
+              <br><br>
+              El resultado es un Array con 'n' cantidad de numeros pares partiendo desde el 0
+            </p><br><br>
+            <img src="imagenes/diagrama1.PNG" alt="diagrama1">
+        </div>
+
+        
+    </div>
+
+    
+    <div class="parte">
+      <h3> Parte 2  </h3>
+      <p>Ahora deberán crear el programa, donde no se considere el cero. Si 'n = 4', la salida del programa deberá ser:<br>
+      [2, 4, 6 , 8]</p>
+
+      <label for="input2"> Ingrese un Numero: </label>
+      <input type="number" name="input2" id="input2"/>
+      <br><br>
+      <button type="button" class="btn btn-primary btn-sm" id="accion2"> Resultado</button>
+      <button type="button" class="btn btn-secondary btn-sm" id ="limpiar2">Limpiar</button>
+      <button type="button" class="btn btn-primary btn-sm" id="btn-solucion2">Mostrar Solucion</button>
+      
+    </div>
+
+    <p id="resultado2"> </p>
+<!-- solucion -->
+
+<div class="soluciones" id="solucion2">
+  <h3>SOLUCION</h3>
+            <p>
+              <pre> const pares2 = (n) => {
+                let resultado = []
+              
+                for (let i = 2; resultado.length <= n - 1 ; i += 2){
+                  resultado.push(i)
+                }
+              
+                return resultado
+              }</pre>
+              
+              
+              La funcion tiene el mismo funcionamiento que el ejercicio anterior, cambiando el valor inicial de 'i' en el bucle
+              asi omitimos el 0 como primer elemento
+            </p><br><br>
+            <img src="imagenes/diagrama2.PNG" alt="diagrama2">
+</div>
+
+
+      
+
+
+
+    </div>
+
+  
+  <hr>
+  <div class="ejercicio">
+    <h2>SUMA IMPARES</h2>
+    <p class="descripcion">En este problema realizaremos sumatorias, con la condición que el número a sumar será impar.</p>
+    <div class="parte">
+      <h3>Parte 1</h3>
+      <P>Crea programa donde se sumen todos los valores impares desde 0 hasta n, donde 'n' es ingresado por el usuario.</P>
+
+      <label for="input3"> Ingrese un Numero: </label>
+      <input type="number" name="input3" id="input3"/>
+      <br><br>
+      <button type="button" class="btn btn-primary btn-sm" id="accion3">Resultado</button>
+      <button type="button" class="btn btn-secondary btn-sm" id="limpiar3"> Limpiar</button>
+      <button type="button" class="btn btn-primary btn-sm" id="btn-solucion3"> Ver Solucion</button>
+      
+
+      <p id="resultado3"> </p>
+<!--solucion -->
+      <div class="soluciones" id="solucion3">
+        <h3>SOLUCION</h3>
+          <p>
+            <pre> const sumaInpares = (n) =>{
+              let resultado = []
+            
+              for(let i = 0 ; i <= n ; i++) {
+                if(i%2 !== 0) {
+                  resultado.push(i)
+                }
+              }
+            
+              return resultado.reduce((acc, val) => 
+                acc + val, 0)
+            }</pre>
+            
+            
+            Mediante un bucle se almacenan los numeros en un Array  desde  'i = 0', hasta 'n' si cumplen la condicion 'i % 2 !== 0'.<br>
+            En el Array resultante se aplica el metodo .reduce() para obtener un valor unico resusltado de la suma de los elementos del Array.
+          </p>
+          <br><br>
+          <img src="imagenes/diagrama3.PNG" alt="diagrama3">
+      </div>
+
+
+    </div>
+
+    <div class="parte">
+      <h3>Parte 2</h3>
+      <P>Crear programa, donde el usuario ingresa dos valores, el límite inferior (min) y
+      superior(max) del intervalo para realizar la suma de los impares. Si 'min= 6' y 'max=30'
+      , la salida del programa deberá saber: "216"</P>
+
+      <label for="input4"> min: </label>
+      <input type="number" name="input4" id="input4"/>
+<br><br>
+      <label for="input41"> max: </label>
+      <input type="number" name="input41" id="input41"/>
+      <br><br>
+      <button type="button" class="btn btn-primary btn-sm" id="accion4">Resultado</button>
+      <button type="button" class="btn btn-secondary btn-sm" id="limpiar4"> Limpiar</button>
+      <button type="button" class="btn btn-primary btn-sm" id="btn-solucion4">Ver Solucion</button>
+
+      <p id="resultado4"> </p>
+
+<!--solucion-->
+      <div class="soluciones" id="solucion4">
+        <h5>SOLUCION</h5>
+          <p>
+            <pre> const sumaDesdeHasta = (n, m) => {
+              let resultado = [];
+            
+              for(let i = +n ; i <= +m ; i++) {
+                if(i%2 !== 0) {
+                  resultado.push(i)
+                }
+              }
+              return resultado.reduce((acc, val) =>
+              acc + val, 0)
+            }</pre>
+            
+            
+            Bajo la misma logica del ejercicio anterior se almacenan los numeros que cumplan la condicion "i % 2 !== 0" con la diferencia
+            que el valor inicial del bucle ya no es "i = 0", sino que esta determinado por un valor establecido por usuario <br>
+
+            En el Array resultante se aplica el metodo .reduce() para obtener un valor unico resusltado de la suma de los elementos del Array.
+          </p><br><br>
+          <img src="imagenes/diagrama4.PNG" alt="diagrama4">
+      </div>
+
+    </div>
+    
+  </div>
+  <hr>
+  <div class="ejercicio">
+
+    <h2>SECUENCIA DE FIBONACCI</h2>
+  <p>La secuencia de Fibonacci se caracteriza donde el siguiente número de la secuencia es la suma de
+    los dos anteriores.
+    
+    <br><br>
+    <quote>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...</quote>
+    <br><br>
+    
+    Donde F(0) = 0 F(1) = 1 F(2) = 1 F(3) = 2 F(4) = 3 F(n) = F(n-1) + F (n-2)</p>
+
+    <h3>Requerimiento</h3>
+    <p>Se debe crear un programa que reciba un numero ingresado por el usuario, que indique cuántos
+      elementos de la serie de Fibonacci se deben mostrar, y el programa debe mostrar los primeros n
+      números de la secuencia de Fibonacci.</p>
+      
+      <p>Si se ingresa n = 7, se debe mostrar el siguiente resultado</p>
+      <quote>0, 1, 1, 2, 3, 5, 8, 13</quote>
+      <br>
+
+<label for ="input5">Ingrese un numero</label>
+<input type="number" name="input5" id="input5" />
+<br><br>
+<button type="button" class="btn btn-primary btn-sm" id="accion5">Generar Secuencia de Fibonacci</button>
+<button type="button" class="btn btn-secondary btn-sm" id="limpiar5">Limpiar</button>
+<button type="button" class="btn btn-primary btn-sm" id="btn-solucion5">Ver Solucion</button>
+<p id="resultado5"> </p>
+  
+<div class="soluciones" id="solucion5">
+  <h3>SOLUCION</h3>
+    <p>
+      <pre> const seqFibonacci = (n) => {
+        let fibonacci = [0 , 1]
+      
+        for ( let i = 2; i <= n ; i ++ ) {
+          fibonacci[i] = fibonacci[i - 2] + fibonacci[i -1]
+        }
+      return fibonacci
+        };</pre>
+      
+      Partiendo con una variable 'fibonacci=[0 ,1]' y una variable 'i = 2' como base. <br>
+      Se evalua "i < n", de ser asi se agrega el indice 'i' en el Array fibonacci y se le asigna el valor
+      del resultado de la suma de sus 2 valores anteriores dentro del mismo array. <br>
+
+      Se agregan indices hasta que 'i' sea igual a 'n' retornando la secuencia Fibonacci.
+      
+    </p><br><br>
+    <img src="imagenes/diagrama5.PNG" alt="diagrama5">
+</div>
+
+</div>
+  
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+    
+  </body>
+</html>
